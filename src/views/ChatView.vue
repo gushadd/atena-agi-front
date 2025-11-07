@@ -2,9 +2,7 @@
 	<main class="h-[95vh] w-full grid grid-rows-10">
 		<!-- Cabeçalho -->
 		<div class="flex justify-between items-center">
-			<RouterLink to="/">
-				<img class="h-auto max-w-10" src="../assets/logos/atena-logo-icon.svg" alt="atena_icon" />
-			</RouterLink>
+			<img class="h-auto max-w-26" src="../assets/logos/atena-logo-full.svg" alt="atena_icon" />
 
 			<button class="btn btn-soft btn-primary">
 				<i class="pi pi-sign-out"></i>
@@ -35,10 +33,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from "vue";
 
 const messages = ref([]);
-const newMessage = ref('');
+const newMessage = ref("");
 
 const aiMessages = [
 	"Olá! Como posso te ajudar hoje?",
@@ -50,10 +48,35 @@ const aiMessages = [
 	"Posso te ajudar com mais alguma coisa?",
 	"Obrigado por me contatar! Tenha um ótimo dia.",
 	"Estou aprendendo coisas novas todos os dias!",
-	"Que tal tentarmos uma abordagem diferente?"
+	"Que tal tentarmos uma abordagem diferente?",
 ];
 
+watch(
+	messages,
+	(newMessages) => {
+		localStorage.setItem("messages", JSON.stringify(newMessages));
+	},
+	{ deep: true }
+);
+
 onMounted(() => {
-	messages.value.push({ text: aiMessages[0], sender: 'assistant' });
+	const savedMessages = localStorage.getItem("messages");
+	if (savedMessages) {
+		messages.value = JSON.parse(savedMessages);
+	} else {
+		messages.value.push({ text: aiMessages[0], sender: "assistant" });
+	}
 });
+
+const sendMessage = () => {
+	if (newMessage.value.trim() === "") return;
+
+	messages.value.push({ text: newMessage.value, sender: "user" });
+	newMessage.value = "";
+
+	setTimeout(() => {
+		const randomIndex = Math.floor(Math.random() * aiMessages.length);
+		messages.value.push({ text: aiMessages[randomIndex], sender: "assistant" });
+	}, 500);
+};
 </script>
