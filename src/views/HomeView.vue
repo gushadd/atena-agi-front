@@ -1,9 +1,9 @@
 <template>
 	<main class="flex flex-col gap-10">
 		<!-- Hero -->
-		<section class="grid lg:grid-cols-2 lg:gap-10">
+		<article class="grid lg:grid-cols-2 lg:gap-10">
 			<!-- Imagem -->
-			<img class="h-auto max-w-full" src="../assets/images/atena-illustration.svg" alt="image description" />
+			<img class="h-auto max-w-full" src="../assets/images/atena-illustration-1.svg" alt="image description" />
 
 			<!-- Textos -->
 			<div class="flex flex-col justify-center">
@@ -14,9 +14,9 @@
 				</p>
 				<button class="btn btn-primary btn-soft self-center" @click="scrollToAboutSection"><i class="pi pi-arrow-down"></i>Saiba Mais</button>
 			</div>
-		</section>
+		</article>
 
-		<section class="flex flex-col gap-5" ref="aboutSection">
+		<article class="flex flex-col gap-5" ref="aboutSection">
 			<div class="collapse collapse-arrow bg-base-100 border border-base-300">
 				<input type="radio" name="my-accordion-1" checked="checked" />
 				<div class="collapse-title font-bold">Sobre a Atena</div>
@@ -48,7 +48,7 @@
 					rápidas e mais conscientes.
 				</div>
 			</div>
-		</section>
+		</article>
 	</main>
 </template>
 

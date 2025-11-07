@@ -4,14 +4,16 @@
 		<input id="main-drawer" type="checkbox" class="drawer-toggle" v-model="drawerIsVisible" />
 
 		<div class="drawer-content">
-			<header>
+			<header v-if="$route.name !== 'login' && $route.name !== 'signin' && $route.name !== 'chat'">
 				<div class="navbar shadow-sm px-5 md:px-44 xl:px-64">
 					<!-- Botões canto esquerdo -->
 					<div class="navbar-start">
 						<label for="main-drawer" class="btn btn-ghost drawer-button xl:hidden">
 							<i class="pi pi-bars"></i>
 						</label>
-						<a class="btn btn-ghost text-xl">Atena AGI</a>
+						<RouterLink to="/chat">
+							<img class="h-auto max-w-36" src="../src/assets/logos/atena-logo-full.svg" alt="atena_logo" />
+						</RouterLink>
 					</div>
 
 					<!-- Botões meio -->
