@@ -19,8 +19,8 @@
 					<!-- Botões meio -->
 					<div class="navbar-center hidden xl:flex">
 						<ul class="menu menu-horizontal px-1 flex gap-10">
-							<li><RouterLink to="/" class="text-lg font-semibold">Início</RouterLink></li>
-							<li><RouterLink to="/about" class="text-lg font-semibold">Sobre Nós</RouterLink></li>
+							<li><RouterLink to="/" class="text-lg font-semibold" :class="$route.name === 'home' ? 'text-primary' : ''">Início</RouterLink></li>
+							<li><RouterLink to="/about" class="text-lg font-semibold" :class="$route.name === 'about' ? 'text-primary' : ''">Sobre Nós</RouterLink></li>
 						</ul>
 					</div>
 
@@ -54,8 +54,8 @@
 		<div class="drawer-side">
 			<label for="main-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 			<ul class="menu bg-base-200 min-h-full w-80 p-4">
-				<li><RouterLink to="/" class="text-lg font-semibold" @click="drawerIsVisible = false">Início</RouterLink></li>
-				<li><RouterLink to="/about" class="text-lg font-semibold" @click="drawerIsVisible = false">Sobre Nós</RouterLink></li>
+				<li><RouterLink to="/" class="text-lg font-semibold" :class="$route.name === 'home' ? 'text-primary' : ''" @click="drawerIsVisible = false">Início</RouterLink></li>
+				<li><RouterLink to="/about" class="text-lg font-semibold" :class="$route.name === 'about' ? 'text-primary' : ''" @click="drawerIsVisible = false">Sobre Nós</RouterLink></li>
 			</ul>
 		</div>
 	</div>
