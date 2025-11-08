@@ -1,5 +1,5 @@
 <template>
-	<main class="flex flex-col lg:gap-20">
+	<main class="flex flex-col gap-20">
 		<!-- Sobre a empresa -->
 		<article>
 			<section class="grid lg:grid-cols-3 mb-10">
@@ -68,6 +68,16 @@
 
 		<AtenaDivider />
 
+		<!-- Criadores -->
+		<article class="text-center space-y-10">
+			<h1 class="text-2xl font-bold">Os Criadores</h1>
+			<div class="grid gap-5 lg:grid-cols-3">
+				<CreatorCard v-for="creator in creators" :key="creator.name" :imageSrc="creator.imageSrc" :name="creator.name" :title="creator.title" :description="creator.description" />
+			</div>
+		</article>
+
+		<AtenaDivider />
+
 		<!-- Sobre a AGI -->
 		<article class="grid lg:grid-cols-3">
 			<section class="hidden lg:flex justify-center">
@@ -84,6 +94,7 @@
 					Seu nome é uma homenagem à deusa grega da sabedoria — mas internamente, alguns engenheiros a chamam de “Atena_01”, em referência à primeira instância funcional criada nos
 					servidores antigos do laboratório Helios.
 				</p>
+				p>
 				<p class="text-lg mb-5">
 					Hoje, a AGI atua como núcleo de diversas soluções corporativas, sempre em constante aprendizado e sob auditoria contínua. Embora muito do seu funcionamento seja automatizado, a
 					empresa mantém o controle humano sobre cada decisão crítica — um princípio que reforça a confiança e a responsabilidade no uso da inteligência artificial.
@@ -96,4 +107,30 @@
 <script setup>
 import CompanyInfo from "@/components/CompanyInfo.vue";
 import AtenaDivider from "../components/AtenaDivider.vue";
+import CreatorCard from "@/components/CreatorCard.vue";
+
+import creator1Img from "../assets/images/creator-1.jpg";
+import creator2Img from "../assets/images/creator-2.jpg";
+import creator3Img from "../assets/images/creator-3.jpg";
+
+const creators = [
+	{
+		imageSrc: creator1Img,
+		name: "Dr. Rafael Silva",
+		title: "Co-Fundador & CEO",
+		description: "Doutor em Ciência da Computação com foco em Deep Learning. Pesquisador com mais de 15 publicações em conferências internacionais de IA.",
+	},
+	{
+		imageSrc: creator2Img,
+		name: "Dra. Ana Costa",
+		title: "Co-Fundadora & CTO",
+		description: "Especialista em Redes Neurais e Arquiteturas Transformers. Ex-pesquisadora em labs de AI do Vale do Silício.",
+	},
+	{
+		imageSrc: creator3Img,
+		name: "Dr. Lucas Oliveira",
+		title: "Co-Fundador & Head of Engineering",
+		description: "Ph.D. em Inteligência Artificial e Processamento de Linguagem Natural. Lidera a equipe de pesquisa e desenvolvimento da Atena.",
+	},
+];
 </script>
