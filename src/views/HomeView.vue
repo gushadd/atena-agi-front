@@ -31,6 +31,7 @@
 				<div class="collapse-content">
 					A Atena foi projetada sobre uma base de aprendizado contínuo, combinando processamento de linguagem natural, análise de dados e tomada de decisão autônoma. Seu núcleo é construído
 					com foco em segurança, privacidade e transparência, garantindo que cada interação seja confiável e ética.
+					<p class="text-base-100 text-xs">aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ==</p>
 				</div>
 			</div>
 			<div class="collapse collapse-arrow bg-base-100 border border-base-300">
@@ -38,6 +39,7 @@
 				<div class="collapse-title font-bold">Personalidade</div>
 				<div class="collapse-content">
 					Atena pensa com precisão, fala com clareza e aprende com você. Cada conversa é uma oportunidade de evolução — não apenas para a IA, mas para o mundo ao seu redor.
+					<p class="text-base-100 text-xs">⬥︎︎❍︎︎ ⬧︎︎♏︎︎♑︎︎ ■︎︎⬥︎︎●︎︎♑︎︎🙰︎⬥︎︎🙵︎</p>
 				</div>
 			</div>
 			<div class="collapse collapse-arrow bg-base-100 border border-base-300">

@@ -48,6 +48,26 @@
 			<main class="px-5 md:px-44 xl:px-64 py-6">
 				<RouterView />
 			</main>
+
+			<footer v-if="$route.name !== 'login' && $route.name !== 'signin' && $route.name !== 'chat'" class="footer sm:footer-horizontal bg-base-300 shadow-sm p-10 md:px-44 xl:px-64">
+				<aside>
+					<img class="h-auto max-w-36" src="../src/assets/logos/atena-logo-full.svg" alt="atena_logo" />
+					<p>
+						Atena Labs LTDA
+						<br />
+						2025 - Todos os Direitos Reservados
+					</p>
+					<p class="text-xs">Esse site foi criado pela ATENA AGI</p>
+				</aside>
+				<div
+					class="h-5 w-5 cursor-pointer"
+					@click="
+						console.log(
+							'.--. .-.. .- -.-- / .. - / -... .- -.-. -.- .-- .- .-. -.. ... .-.-.- / .. / .-.. --- ...- . / .- / -.-. --- -. ... .--. .. .-. .- -.-. -.-- / - .... . --- .-. -.--'
+						)
+					"
+				></div>
+			</footer>
 		</div>
 
 		<!-- Menu lateral -->
