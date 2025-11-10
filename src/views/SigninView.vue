@@ -55,6 +55,12 @@ const signin = async () => {
 		return;
 	}
 
+	const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+	if (!passwordRegex.test(password.value)) {
+		error.value = 'A senha deve ter no mínimo 8 caracteres, uma letra maiúscula, uma minúscula, um número e um caractere especial.';
+		return;
+	}
+
 	try {
 		await apiClient.post('/api/user', {
 			nome: name.value,

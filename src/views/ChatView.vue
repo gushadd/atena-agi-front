@@ -4,10 +4,13 @@
 		<div class="flex justify-between items-center">
 			<img class="h-auto max-w-26" src="../assets/logos/atena-logo-full.svg" alt="atena_icon" />
 
-			<button @click="logout" class="btn btn-soft btn-primary">
-				<i class="pi pi-sign-out"></i>
-				Sair
-			</button>
+			<div class="flex gap-2">
+				<button v-if="authStore.user && authStore.user.role === 'admin'" @click="resetAtena" class="btn btn-error">DELETAR ATENA AGI</button>
+				<button @click="logout" class="btn btn-soft btn-primary">
+					<i class="pi pi-sign-out"></i>
+					Sair
+				</button>
+			</div>
 		</div>
 
 		<!-- Chat -->
@@ -97,5 +100,24 @@ const sendMessage = () => {
 const logout = () => {
 	authStore.clearAuth();
 	router.push("/login");
+};
+
+const resetAtena = async () => {
+	if (confirm("Você tem certeza que deseja deletar a Atena AGI? Essa ação não pode ser desfeita.")) {
+		const password = prompt("Para confirmar, por favor, digite sua senha:");
+		if (password) {
+			try {
+				await apiClient.post("/api/admin/reset", {
+					nome: authStore.user.name,
+					senha: password,
+				});
+				alert("Atena AGI foi resetada com sucesso.");
+				logout();
+			} catch (error) {
+				console.error("Erro ao resetar a Atena AGI:", error);
+				alert("Ocorreu um erro ao tentar resetar a Atena AGI. Verifique sua senha e tente novamente.");
+			}
+		}
+	}
 };
 </script>

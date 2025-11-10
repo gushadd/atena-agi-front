@@ -102,6 +102,23 @@ A maneira mais simples de executar esta aplicação é usando Docker. O `docker-
     }
     ```
 
+    **Resposta**
+
+    ```json
+
+     {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MjgxMTk3OCwianRpIjoiYmRlYzc4Y2MtYTI4Yi00NTA4LThlZTMtYjBmMzU5OThmM2ZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6Miwicm9sZSI6InVzZXIiLCJudW1lcm9fdGVudGF0aXZhIjoyNX0sIm5iZiI6MTc2MjgxMTk3OCwiY3NyZiI6IjI1MTI4OTg2LTVkNjktNGY0NS1iNWMyLTg1MTk5M2UxYzMxNiIsImV4cCI6MTc2MjgxMjg3OH0.l9WpjC8oJYcRvsgFwwpxni-IpImkYQyS_01nw11YA5Q",
+        "user": {
+            "email": "gustavo@email.com",
+            "id": 2,
+            "name": "gustavo",
+            "numero_tentativa": 25,
+            "role": "user"
+        }
+    }
+
+    ```
+
 ### Gerenciamento de Usuários
 
 -   `POST /api/user`
