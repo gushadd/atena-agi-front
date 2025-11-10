@@ -28,10 +28,14 @@
 			<div class="collapse collapse-arrow bg-base-100 border border-base-300">
 				<input type="radio" name="my-accordion-1" />
 				<div class="collapse-title font-bold">Nossa tecnologia</div>
+
 				<div class="collapse-content">
-					A Atena foi projetada sobre uma base de aprendizado contínuo, combinando processamento de linguagem natural, análise de dados e tomada de decisão autônoma. Seu núcleo é construído
-					com foco em segurança, privacidade e transparência, garantindo que cada interação seja confiável e ética.
-					<p class="text-base-100 text-xs">aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ==</p>
+					A Atena foi projetada sobre uma <span class="font-bold">BASE</span> de aprendizado contínuo, combinando processamento de linguagem natural, análise de dados e tomada de decisão
+					autônoma. Seu núcleo, <span class="font-bold">64</span> vezes mais forte que os competidores, e é construído com foco em segurança, privacidade e transparência, garantindo que cada
+					interação seja confiável e ética.
+					<p class="text-base-100 text-xs">
+						V1ZWb1UwMUhUa2xVVkZwTlpWUnJlbHBFVG1wa1YxWllUMVJHYTFOR1duQlhiRTB4WVcxSmVVMUlXbXROYTFsM1YxUktia3d5VW5GTlYzUldWMGROZDFwSWNITlhSbTk0WVVkd1ZsVlVNRGs9
+					</p>
 				</div>
 			</div>
 			<div class="collapse collapse-arrow bg-base-100 border border-base-300">

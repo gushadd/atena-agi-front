@@ -98,6 +98,8 @@
 				</p>
 			</section>
 		</article>
+
+		<img src="../assets/images/helios-top-secret.jpg" class="h-0 w-0" />
 	</main>
 </template>
 
@@ -115,13 +117,15 @@ const creators = [
 		imageSrc: creator1Img,
 		name: "Dr. Jonathan Scott",
 		title: "Co-Fundador & CEO",
-		description: "Doutor em Ciência da Computação com foco em Deep Learning. Pesquisador com mais de 15 publicações em conferências internacionais de IA.",
+		description:
+			"Doutor em Ciência da Computação com foco em Deep Learning. Pesquisador com mais de 15 publicações em conferências internacionais de IA. Especialista em Microsoft Office, formado em Scranton.",
 	},
 	{
 		imageSrc: creator2Img,
 		name: "Dra. Ana Piergolini",
 		title: "Co-Fundadora & CTO",
-		description: "Especialista em Redes Neurais e Arquiteturas Transformers. Ex-pesquisadora em labs de AI do Vale do Silício. Trabalhou por 10 anos no setor de IA da Nvidia.",
+		description:
+			"Especialista em Redes Neurais, Arquiteturas Transformers e códigos Hexadecimais. Ex-pesquisadora em labs de AI do Vale do Silício. Trabalhou por 10 anos no setor de IA da Nvidia.",
 	},
 	{
 		imageSrc: creator3Img,

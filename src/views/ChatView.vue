@@ -4,7 +4,7 @@
 		<div class="flex justify-between items-center">
 			<img class="h-auto max-w-26" src="../assets/logos/atena-logo-full.svg" alt="atena_icon" />
 
-			<button class="btn btn-soft btn-primary">
+			<button @click="logout" class="btn btn-soft btn-primary">
 				<i class="pi pi-sign-out"></i>
 				Sair
 			</button>
@@ -34,9 +34,15 @@
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
+import { useRouter } from "vue-router";
+import apiClient from "../api";
+import { useAuthStore } from "../stores/auth";
 
 const messages = ref([]);
 const newMessage = ref("");
+
+const authStore = useAuthStore();
+const router = useRouter();
 
 const aiMessages = [
 	"Olá! Como posso te ajudar hoje?",
@@ -69,14 +75,27 @@ onMounted(() => {
 });
 
 const sendMessage = () => {
-	if (newMessage.value.trim() === "") return;
+	if (newMessage.value.trim() === "" || !authStore.user) return;
 
-	messages.value.push({ text: newMessage.value, sender: "user" });
+	const userMessage = { text: newMessage.value, sender: "user" };
+	messages.value.push(userMessage);
 	newMessage.value = "";
 
-	setTimeout(() => {
-		const randomIndex = Math.floor(Math.random() * aiMessages.length);
-		messages.value.push({ text: aiMessages[randomIndex], sender: "assistant" });
-	}, 500);
+	apiClient
+		.post("/api/resposta", { email: authStore.user.email, mensagem: userMessage.text })
+		.then((response) => {
+			messages.value.push({ text: response.data.resposta, sender: "assistant" });
+		})
+		.catch(() => {
+			setTimeout(() => {
+				const randomIndex = Math.floor(Math.random() * aiMessages.length);
+				messages.value.push({ text: aiMessages[randomIndex], sender: "assistant" });
+			}, 500);
+		});
+};
+
+const logout = () => {
+	authStore.clearAuth();
+	router.push("/login");
 };
 </script>
