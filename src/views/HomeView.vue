@@ -30,7 +30,7 @@
 				<div class="collapse-title font-bold">Nossa tecnologia</div>
 
 				<div class="collapse-content">
-					A Atena foi projetada sobre uma <span class="font-bold">BASE</span> de aprendizado contínuo, combinando processamento de linguagem natural, análise de dados e tomada de decisão
+					A Atena foi projetada sobre uma <span class="font-bold">base</span> de aprendizado contínuo, combinando processamento de linguagem natural, análise de dados e tomada de decisão
 					autônoma. Seu núcleo, <span class="font-bold">64</span> vezes mais forte que os competidores, e é construído com foco em segurança, privacidade e transparência, garantindo que cada
 					interação seja confiável e ética.
 					<p class="text-base-100 text-xs">

@@ -6,7 +6,7 @@
 
 			<form @submit.prevent="signin" class="flex flex-col w-[300px]">
 				<fieldset class="fieldset">
-					<legend class="fieldset-legend">Nome Completo</legend>
+					<legend class="fieldset-legend">Nome de usuário</legend>
 					<input v-model="name" type="text" class="input input-primary" required />
 				</fieldset>
 
